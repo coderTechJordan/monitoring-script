@@ -1,0 +1,19 @@
+
+System Information:
+	Kernel Release:	 5.15.133.1-microsoft-standard-WSL2
+	Bash Version:	 5.2.15(1)-release
+	Free Storage:	 954G
+	Free Memory:	 7.0Gi
+	Files in pwd:	 3
+	Generated on:	 2023-12-15
+
+Log Check:
+	File does not exist
+
+Services Status:
+	dbus is running.
+
+System Metrics:
+	CPU Usage: 0.0%
+	Memory Usage: 526MB
+	Disk Space Usage: 1%
