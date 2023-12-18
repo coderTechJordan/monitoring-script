@@ -1,0 +1,64 @@
+df -h /
+	this command displays information abot disk usage
+	-h option makes the output human-readable, The /
+	argument specifies  that the command should provide information
+	about the root filesystem.
+	
+df -h / | awk 'NR==2 {print $4}'
+	this command pipes the output of the df -h / command
+	to awk. The NR==2 condition specifies that the following action
+	should be performed only on the second line of input.
+	NR is an awk variable that represents the current record (line) number.
+	Thhe {print $4} specifies to print the fourth column of the input line
+	which corresponds to available disk space. 
+
+free -h
+	this command displays information about system memory
+	
+free -h | awk 'NR==2 {print $4}'
+	this command pipes the output of the free -h command
+	to awk. The NR==2 condition specifies that the following action
+	should be performed only on the second line of input.
+	NR is an awk variable that represents the current record (line) number.
+	Thhe {print $4} specifies to print the fourth column of the input line
+	which corresponds to the amount of free memory.
+	
+	
+
+echo -e
+	this command enables interpretation of backslash escapes
+
+if [[ -e $log_file ]]
+	in this context the -e flag checks if the file exists
+	
+grep -ic
+	uses grep to count the occurrences
+	of the qword "error" in the log file.
+
+top -bn1
+	this command runs top in batch mode with one iteration
+	(This provides a snapshot of the system's current state).
+	
+top -bn1 | grep "Cpu(s)"
+	This uses grep to filter the CPU information from
+	the top command output.
+	
+top -bn1 | grep "Cpu(s)" | awk '{print $2}'
+
+	This extracts the second colum which is the CPU usage percentage
+	from the filtered line.
+	
+free -m
+	this command displays information about system memory in megabytes
+	
+free -m | awk '/Mem/ {print $3}'
+	This extracts the third column containing information about used memory
+	
+df -h
+	This command displays information about disk
+	space usage for the root filesystem.
+	
+df -h / | awk '/\// {print $5}'
+	This extracts the fifth column containing information
+	about the root filesystem's disk space used.
+	
